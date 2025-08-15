@@ -4,9 +4,13 @@ const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const app = express();
 
-app.use('/user',userRoutes);
-app.use('/product',productRoutes);
-app.use('/cart',cartRoutes);
+app.use(express.static('public'));
+
+app.use(express.json());
+
+app.use('/api/user',userRoutes);
+app.use('/api/product',productRoutes);
+app.use('/api/cart',cartRoutes);
 
 app.get('*',(req,res)=>{
     res.statusCode = 404;

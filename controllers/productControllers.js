@@ -12,8 +12,11 @@ const getProducts = (req, res) => {
 };
 
 const postProducts = (req, res) => {
- const result = postProductsService();
-    res.send(result);
+//  const result = postProductsService();
+//     res.send(result);
+  const data = req.body;
+  console.log(data);
+   res.json({"value":data.productName});
 };
 
 const getProductById = (req, res) => {
