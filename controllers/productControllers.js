@@ -3,10 +3,12 @@ const {
   postProductsService,
   getProductByIdService,
 } = require("../service/productService");
+const path = require('path');
 
 const getProducts = (req, res) => {
-    const result = getProductsService();
-    res.send(result);
+    // const result = getProductsService();
+    // res.send(result);
+    res.sendFile(path.join(__dirname,"..","view","product.html"));
 };
 
 const postProducts = (req, res) => {
